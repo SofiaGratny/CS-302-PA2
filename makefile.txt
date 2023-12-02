@@ -1,0 +1,17 @@
+program: main.o Task.o Console.o
+	g++ -std=c++11 -o program main.o Task.o Console.o
+
+
+main.o: main.cpp
+	g++ -std=c++11 -c main.cpp
+
+
+Task.o: Task.h Task.cpp
+	g++ -std=c++11 -c Task.cpp
+
+
+Console.o: Console.h Console.cpp
+	g++ -std=c++11 -c Console.cpp
+
+clean:
+	rm program *.o
